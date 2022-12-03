@@ -16,7 +16,7 @@ calories.reverse()
 
 print("Top Calories:")
 for i in range(0, 3):
-    print(str(i) + ": " + str(calories[i]))
+    print(str(i) + ": ", calories[i])
     sum += calories[i]
 
-print("Total calories: " + str(sum))
+print("Total calories: ", sum)

@@ -36,7 +36,7 @@ for line in data:
             score += 3 # +3 for Draw
 
 print("Part One")
-print("Final score: " + str(score))
+print("Final score: ", score)
 
 score = 0
 
@@ -73,4 +73,4 @@ for line in data:
             score += 6 # +6 for Win
 
 print("Part Two")
-print("Final score: " + str(score))
+print("Final score: ", score)
