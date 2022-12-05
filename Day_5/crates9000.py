@@ -1,18 +1,3 @@
-with open('Day_5/test.txt') as f:
-    test = f.read().splitlines()
-
-#stack1 = []
-#stack1.append('Z')
-#stack1.append('N')
-#
-#stack2 = []
-#stack2.append('M')
-#stack2.append('C')
-#stack2.append('D')
-#
-#stack3 = []
-#stack3.append('P')
-
 with open('Day_5/input.txt') as f:
     data = f.read().splitlines()
 
@@ -102,91 +87,57 @@ for line in data:
     fromWhere = int(line[3])
     toWhere = int(line[5])
 
-    if fromWhere == 1:
-        fromWhere = stack1
-    elif fromWhere == 2:
-        fromWhere = stack2
-    elif fromWhere == 3:
-        fromWhere = stack3
-    elif fromWhere == 4:
-        fromWhere = stack4
-    elif fromWhere == 5:
-        fromWhere = stack5
-    elif fromWhere == 6:
-        fromWhere = stack6
-    elif fromWhere == 7:
-        fromWhere = stack7
-    elif fromWhere == 8:
-        fromWhere = stack8
-    elif fromWhere == 9:
-        fromWhere = stack9
+    match fromWhere:
+        case 1: fromWhere = stack1
+        case 2: fromWhere = stack2
+        case 3: fromWhere = stack3
+        case 4: fromWhere = stack4
+        case 5: fromWhere = stack5
+        case 6: fromWhere = stack6
+        case 7: fromWhere = stack7
+        case 8: fromWhere = stack8
+        case 9: fromWhere = stack9
     
-
-    if toWhere == 1:
-        toWhere = stack1
-    elif toWhere == 2:
-        toWhere = stack2
-    elif toWhere == 3:
-        toWhere = stack3
-    elif toWhere == 4:
-        toWhere = stack4
-    elif toWhere == 5:
-        toWhere = stack5
-    elif toWhere == 6:
-        toWhere = stack6
-    elif toWhere == 7:
-        toWhere = stack7
-    elif toWhere == 8:
-        toWhere = stack8
-    elif toWhere == 9:
-        toWhere = stack9
+    match toWhere:
+        case 1: toWhere = stack1
+        case 2: toWhere = stack2
+        case 3: toWhere = stack3
+        case 4: toWhere = stack4
+        case 5: toWhere = stack5
+        case 6: toWhere = stack6
+        case 7: toWhere = stack7
+        case 8: toWhere = stack8
+        case 9: toWhere = stack9
 
 
     for i in range(0, howMany):
         popped = fromWhere.pop()
         toWhere.append(popped)
 
-    if int(line[3]) == 1:
-        stack1 = fromWhere
-    elif int(line[3]) == 2:
-        stack2 = fromWhere
-    elif int(line[3]) == 3:
-        stack3 = fromWhere
-    elif int(line[3]) == 4:
-        stack4 = fromWhere
-    elif int(line[3]) == 5:
-        stack5 = fromWhere 
-    elif int(line[3]) == 6:
-        stack6 = fromWhere 
-    elif int(line[3]) == 7:
-        stack7 = fromWhere
-    elif int(line[3]) == 8:
-        stack8 = fromWhere
-    elif int(line[3]) == 9:
-        stack9 = fromWhere
+    match int(line[3]):
+        case 1: stack1 = fromWhere
+        case 2: stack2 = fromWhere
+        case 3: stack3 = fromWhere
+        case 4: stack4 = fromWhere
+        case 5: stack5 = fromWhere 
+        case 6: stack6 = fromWhere 
+        case 7: stack7 = fromWhere
+        case 8: stack8 = fromWhere
+        case 9: stack9 = fromWhere
     
-    if int(line[5]) == 1:
-        stack1 = toWhere
-    elif int(line[5]) == 2:
-        stack2 = toWhere
-    elif int(line[5]) == 3:
-        stack3 = toWhere
-    elif int(line[5]) == 4:
-        stack4 = toWhere
-    elif int(line[5]) == 5:
-        stack5 = toWhere
-    elif int(line[5]) == 6:
-        stack6 = toWhere
-    elif int(line[5]) == 7:
-        stack7 = toWhere
-    elif int(line[5]) == 8:
-        stack8 = toWhere
-    elif int(line[5]) == 9:
-        stack9 = toWhere
-        
+    match int(line[5]):
+        case 1: stack1 = toWhere
+        case 2: stack2 = toWhere
+        case 3: stack3 = toWhere
+        case 4: stack4 = toWhere
+        case 5: stack5 = toWhere 
+        case 6: stack6 = toWhere 
+        case 7: stack7 = toWhere
+        case 8: stack8 = toWhere
+        case 9: stack9 = toWhere
 
 print("Top of each stack:", stack1[len(stack1)-1] + 
 stack2[len(stack2)-1] + stack3[len(stack3)-1] + 
 stack4[len(stack4)-1] + stack5[len(stack5)-1] + 
 stack6[len(stack6)-1] + stack7[len(stack7)-1] + 
-stack8[len(stack8)-1] + stack9[len(stack9)-1]) # TPGVQPFD is incorrect
+stack8[len(stack8)-1] + stack9[len(stack9)-1])
