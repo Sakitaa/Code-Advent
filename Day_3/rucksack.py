@@ -16,4 +16,38 @@ for line in data:
             else:
                 priorities += ord(line[x])-38
 
+print("Part One")
 print("Total sum of priorities: ", priorities)
+
+
+i = 0
+word1 = ""
+word2 = ""
+word3 = ""
+badgeValues = 0
+
+for line in data:
+    temp = badgeValues
+    if i == 0:
+        word1 = str(line)
+        i += 1
+    elif i == 1:
+        word2 = str(line)
+        i += 1
+    elif i == 2:
+        word3 = str(line)
+        i = 0
+        for x in range(0, int(len(word1))):
+            for y in range(0, int(len(word2))):
+                if word1[x] == word2[y]:
+                    for z in range(0, int(len(word3))):
+                        if word3[z] == word2[y] and temp == badgeValues:
+                            if ord(word3[z]) > 96:
+                                badgeValues += ord(word3[z])-96
+                                break
+                            else:
+                                badgeValues += ord(word3[z])-38
+                                break
+
+print("Part Two")
+print("Total sum of badge values:", badgeValues)
