@@ -8,4 +8,19 @@ for i in range(3, int(len(data))-1):
                 i += 1 # because first index is 0 and not 1 we have to add 1 to get the correct result
                 break
 
+for j in range(3, int(len(data))):
+    text = ""
+    check = 0
+    for k in range(4, 0, -1):
+        text += data[j-k+1]
+    for l in range(0, int(len(text))-1):
+        for g in range(l+1, int(len(text))):
+            if text[l] != text[g]:
+                check += 1
+    if check == 6:
+        j += 1 # because first index is 0 and not 1 we have to add 1 to get the correct result
+        break
+
+print("Part One")
 print("Number of characters processed:", i)
+print("Number of characters processed:", j)
