@@ -23,16 +23,14 @@ for line in data:
             dataAdd[caseDefiner[1]] = dataList.index(currentDir)
         case other:
             totalSum += int(caseDefiner[0])
-            check = rindex(dataList, currentDir)
             dataDict[rindex(dataList, currentDir)] += int(caseDefiner[0])
 
 for key, value in reversed(dataAdd.items()):
-    dataDict[value] += dataDict[rindex(dataList, key)]
+    dataDict[value] += dataDict[dataList.index(key)]
 
 sum = 0
 for key, value in dataDict.items():
     if value < 100_000:
-        print(key, value)
         sum += value
 
 
